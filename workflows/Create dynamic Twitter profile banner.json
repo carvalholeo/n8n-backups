@@ -1,0 +1,416 @@
+{
+  "active": false,
+  "connections": {
+    "Crop": {
+      "main": [
+        [
+          {
+            "node": "Resize1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Edit Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resize": {
+      "main": [
+        [
+          {
+            "node": "Crop",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resize1": {
+      "main": [
+        [
+          {
+            "node": "Function",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch bg": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Function": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Edit Image": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists": {
+      "main": [
+        [
+          {
+            "node": "Fetching images",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetching images": {
+      "main": [
+        [
+          {
+            "node": "Resize",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch new followers": {
+      "main": [
+        [
+          {
+            "node": "Item Lists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On clicking 'execute'": {
+      "main": [
+        [
+          {
+            "node": "Fetch new followers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Fetch new followers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-01-18T04:28:58.720Z",
+  "id": "1",
+  "name": "Create dynamic Twitter profile banner",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "On clicking 'execute'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        380,
+        240
+      ],
+      "typeVersion": 1,
+      "id": "c2de041d-9750-4cfc-b830-7aafb1c6a118"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth1",
+        "url": "https://api.twitter.com/2/users/85838972/followers?user.fields=profile_image_url&max_results=3",
+        "options": {}
+      },
+      "name": "Fetch new followers",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        580,
+        240
+      ],
+      "typeVersion": 1,
+      "id": "b1111848-d6c8-4da9-af75-6a20f157ebdd",
+      "credentials": {
+        "oAuth1Api": {
+          "id": "2",
+          "name": "Unnamed credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {}
+      },
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "position": [
+        780,
+        240
+      ],
+      "typeVersion": 1,
+      "id": "fdb20724-388d-4454-a2a5-790b2a622804"
+    },
+    {
+      "parameters": {
+        "functionCode": "const binary = {};\nfor (let i=0; i < items.length; i++) {\n  binary[`data${i}`] = items[i].binary.avatar;\n}\n\nreturn [\n  {\n    json: {\n      numIcons: items.length,\n    },\n    binary,\n  }\n];\n"
+      },
+      "name": "Function",
+      "type": "n8n-nodes-base.function",
+      "position": [
+        1780,
+        240
+      ],
+      "typeVersion": 1,
+      "id": "036f3153-7551-4284-aab4-31134a74558c"
+    },
+    {
+      "parameters": {
+        "mode": "mergeByIndex"
+      },
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        2030,
+        140
+      ],
+      "typeVersion": 1,
+      "id": "a0acf5fd-8a76-48c7-aa54-f149a6b1eb2b"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth1",
+        "url": "={{$json[\"profile_image_url\"].replace('normal','400x400')}}",
+        "responseFormat": "file",
+        "dataPropertyName": "avatar",
+        "options": {}
+      },
+      "name": "Fetching images",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        980,
+        240
+      ],
+      "typeVersion": 1,
+      "id": "bf9d55e9-fa3c-449f-ab0c-7c2f91ef7bd1",
+      "credentials": {
+        "oAuth1Api": {
+          "id": "2",
+          "name": "Unnamed credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://pbs.twimg.com/profile_banners/85838972/1651071152/1500x500",
+        "responseFormat": "file",
+        "dataPropertyName": "bg",
+        "options": {}
+      },
+      "name": "Fetch bg",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        1780,
+        -10
+      ],
+      "typeVersion": 1,
+      "id": "c3864920-3fa8-44c8-80d0-13f41e265fbb"
+    },
+    {
+      "parameters": {
+        "operation": "resize",
+        "dataPropertyName": "avatar",
+        "width": 200,
+        "height": 200,
+        "options": {}
+      },
+      "name": "Resize",
+      "type": "n8n-nodes-base.editImage",
+      "position": [
+        1180,
+        240
+      ],
+      "typeVersion": 1,
+      "id": "f3c26e72-62b6-4286-8b6a-260a34d658fb"
+    },
+    {
+      "parameters": {
+        "operation": "multiStep",
+        "dataPropertyName": "avatar",
+        "operations": {
+          "operations": [
+            {
+              "operation": "create",
+              "backgroundColor": "#000000ff",
+              "width": 200,
+              "height": 200
+            },
+            {
+              "operation": "draw",
+              "primitive": "circle",
+              "color": "#ffffff00",
+              "startPositionX": 100,
+              "startPositionY": 100,
+              "endPositionX": 25,
+              "endPositionY": 50
+            },
+            {
+              "operation": "composite",
+              "dataPropertyNameComposite": "avatar",
+              "operator": "In"
+            }
+          ]
+        },
+        "options": {
+          "format": "png"
+        }
+      },
+      "name": "Crop",
+      "type": "n8n-nodes-base.editImage",
+      "position": [
+        1380,
+        240
+      ],
+      "typeVersion": 1,
+      "id": "489cd2e5-ca14-4e6a-8400-1827421a7583"
+    },
+    {
+      "parameters": {
+        "operation": "multiStep",
+        "dataPropertyName": "bg",
+        "operations": {
+          "operations": [
+            {
+              "operation": "composite",
+              "dataPropertyNameComposite": "data0",
+              "positionX": 1000,
+              "positionY": 375
+            },
+            {
+              "operation": "composite",
+              "dataPropertyNameComposite": "data1",
+              "positionX": 1100,
+              "positionY": 375
+            },
+            {
+              "operation": "composite",
+              "dataPropertyNameComposite": "data2",
+              "positionX": 1200,
+              "positionY": 375
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Edit Image",
+      "type": "n8n-nodes-base.editImage",
+      "position": [
+        2230,
+        140
+      ],
+      "typeVersion": 1,
+      "id": "659ba360-4e81-4529-aa43-636e447e4c2b"
+    },
+    {
+      "parameters": {
+        "operation": "resize",
+        "dataPropertyName": "avatar",
+        "width": 75,
+        "height": 75,
+        "options": {}
+      },
+      "name": "Resize1",
+      "type": "n8n-nodes-base.editImage",
+      "position": [
+        1570,
+        240
+      ],
+      "typeVersion": 1,
+      "id": "420108dc-3bf4-4581-b11a-be066fa7401c"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth1",
+        "requestMethod": "POST",
+        "url": "https://api.twitter.com/1.1/account/update_profile_banner.json",
+        "jsonParameters": true,
+        "options": {
+          "bodyContentType": "multipart-form-data"
+        },
+        "sendBinaryData": true,
+        "binaryPropertyName": "banner:bg"
+      },
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2430,
+        140
+      ],
+      "typeVersion": 1,
+      "id": "5765e63b-03f9-4c61-9bbd-4415f45db209",
+      "credentials": {
+        "oAuth1Api": {
+          "id": "2",
+          "name": "Unnamed credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "id": "c3b47892-9334-4865-bd5d-1af8db8d8beb",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        380,
+        60
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2023-01-18T04:56:27.000Z",
+  "versionId": "43c99b39-ef08-4d33-8f67-fff7298b84df"
+}
