@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "HTTP Request": {
       "main": [
@@ -854,9 +854,13 @@
   ],
   "pinData": {},
   "settings": {},
-  "staticData": null,
+  "staticData": {
+    "node:Start of Month": {
+      "recurrencyRules": []
+    }
+  },
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2023-01-24T01:35:21.000Z",
-  "versionId": "fb34a6ec-d433-4cda-af4f-e02a80127bc1"
+  "triggerCount": 1,
+  "updatedAt": "2023-01-24T02:59:39.000Z",
+  "versionId": "af0a222a-34e2-4318-93b1-2709ac485401"
 }
