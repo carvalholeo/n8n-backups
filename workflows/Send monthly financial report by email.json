@@ -1,0 +1,862 @@
+{
+  "active": false,
+  "connections": {
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Check if pagination?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set next URL": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check if pagination?": {
+      "main": [
+        [
+          {
+            "node": "Set next URL",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Clean and bring only data object",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Clean and bring only data object",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On clicking 'execute'": {
+      "main": [
+        [
+          {
+            "node": "From year to date",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Set Page Number",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Page Number": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start month": {
+      "main": [
+        [
+          {
+            "node": "Format start month",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "End month": {
+      "main": [
+        [
+          {
+            "node": "Add start and end date to category link",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format start month": {
+      "main": [
+        [
+          {
+            "node": "End month",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clean and bring only data object": {
+      "main": [
+        [
+          {
+            "node": "Start month",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add start and end date to category link": {
+      "main": [
+        [
+          {
+            "node": "Get earns and spents from categories",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get earns and spents from categories": {
+      "main": [
+        [
+          {
+            "node": "Sum earns and spents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "From year to date": {
+      "main": [
+        [
+          {
+            "node": "Start month for summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start month for summary": {
+      "main": [
+        [
+          {
+            "node": "Format month for summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format month for summary": {
+      "main": [
+        [
+          {
+            "node": "End month for summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "End month for summary": {
+      "main": [
+        [
+          {
+            "node": "Set links for month and year summary",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Month Name",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set links for month and year summary": {
+      "main": [
+        [
+          {
+            "node": "Get year and month summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get year and month summary": {
+      "main": [
+        [
+          {
+            "node": "Get values from summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get values from summary": {
+      "main": [
+        [
+          {
+            "node": "Summary HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sum earns and spents": {
+      "main": [
+        [
+          {
+            "node": "Categories table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Month Name": {
+      "main": [
+        [
+          {
+            "node": "Email Header",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Categories table": {
+      "main": [
+        [
+          {
+            "node": "First merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Summary HTML": {
+      "main": [
+        [
+          {
+            "node": "First merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Email Header": {
+      "main": [
+        [
+          {
+            "node": "Second merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "First merge": {
+      "main": [
+        [
+          {
+            "node": "Second merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Second merge": {
+      "main": [
+        [
+          {
+            "node": "Generate final HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate final HTML": {
+      "main": [
+        [
+          {
+            "node": "Send Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email": {
+      "main": [
+        [
+          {
+            "node": "End",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start of Month": {
+      "main": [
+        [
+          {
+            "node": "Set Page Number",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "From year to date",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-01-23T15:34:30.312Z",
+  "id": "4",
+  "name": "Send monthly financial report by email",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "On clicking 'execute'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        60,
+        220
+      ],
+      "typeVersion": 1,
+      "id": "f8d5aa05-95a7-4e90-a7bf-5950351582c2"
+    },
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "url": "https://financeiro.leocarvalho.dev/api/v1/categories",
+        "options": {},
+        "queryParametersUi": {
+          "parameter": [
+            {
+              "name": "page",
+              "value": "={{ $json[\"page_number\"] }}"
+            }
+          ]
+        }
+      },
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        540,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "a9d2956b-e15f-4b2b-8d03-23d69a7cac3d",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "4",
+          "name": "Firefly III"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [],
+          "boolean": [
+            {
+              "value1": "={{ $json[\"links\"][\"next\"] ? true : false}}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "name": "Check if pagination?",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        740,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "c9636883-1963-41f0-b963-ac2b5c3bd794"
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "page_number",
+              "value": "={{ $node[\"Set Page Number\"].json[\"page_number\"] + 1 }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Set next URL",
+      "type": "n8n-nodes-base.set",
+      "position": [
+        560,
+        -260
+      ],
+      "executeOnce": true,
+      "typeVersion": 1,
+      "id": "97383100-b340-4922-912c-ce9630910433"
+    },
+    {
+      "parameters": {
+        "values": {
+          "number": [
+            {
+              "name": "page_number",
+              "value": 1
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "068a9d17-95e8-4b9e-a19e-172e769eaf41",
+      "name": "Set Page Number",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        340,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "action": "calculate",
+        "value": "={{$now}}",
+        "operation": "subtract",
+        "duration": 1,
+        "timeUnit": "months",
+        "dataPropertyName": "startDate",
+        "options": {}
+      },
+      "id": "b9570f4a-e01c-489f-8bac-569f342890eb",
+      "name": "Start month",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "value": "={{ $json[\"startDate\"] }}",
+        "dataPropertyName": "startDate",
+        "toFormat": "YYYY-MM-DD",
+        "options": {}
+      },
+      "id": "33a0c3ef-3620-4f79-9e4c-de10a42a0cc2",
+      "name": "Format start month",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "value": "={{$now}}",
+        "dataPropertyName": "endDate",
+        "toFormat": "YYYY-MM-DD",
+        "options": {}
+      },
+      "id": "0f8c646d-5754-4d76-86bb-4489bc3c7d1c",
+      "name": "End month",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        1760,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = [];\n\nfor (const item of $input.all()[0].json.data) {\n  data.push(item);  \n}\n\nreturn data;"
+      },
+      "id": "ce4e33be-d5a6-4c8f-a1e4-b359a11de3f5",
+      "name": "Clean and bring only data object",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json[\"links\"][\"self\"] }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "74fa5315-215e-4b5a-afcb-69fd74219ca0",
+      "name": "Get earns and spents from categories",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1340,
+        0
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "4",
+          "name": "Firefly III"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.links.self += `?start=${item.json.startDate}&end=${item.json.endDate}`\n}\n\nreturn $input.all();"
+      },
+      "id": "c9977534-dabd-4576-ac54-c8af25e18afd",
+      "name": "Add start and end date to category link",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const categories = [];\nfor (const item of $input.all()) {\n  const newObj = {\n    name: item.json.data.attributes.name,\n    earned: +item.json.data?.attributes?.earned[0]?.sum || 0,\n    spent: +item.json.data?.attributes?.spent[0]?.sum || 0,\n  };\n\n  if (newObj.earned === 0 && newObj.spent === 0) {\n    continue;\n  }\n\n  const total = newObj.earned + newObj.spent;\n  newObj.total = total.toFixed(2);\n\n  categories.push(newObj);\n}\n\nreturn categories;"
+      },
+      "id": "f48ceeb2-de48-43d8-9c2a-823ff4370e38",
+      "name": "Sum earns and spents",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1580,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "value": "={{ $now }}",
+        "dataPropertyName": "year",
+        "custom": true,
+        "toFormat": "YYYY",
+        "options": {}
+      },
+      "id": "41ef18bc-b5e5-4613-82ec-86e969a157e6",
+      "name": "From year to date",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        340,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "action": "calculate",
+        "value": "={{$now}}",
+        "operation": "subtract",
+        "duration": 1,
+        "timeUnit": "months",
+        "dataPropertyName": "startDate",
+        "options": {}
+      },
+      "id": "39f8e7bb-bc5a-44cd-9364-24b8e25b3a47",
+      "name": "Start month for summary",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        560,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "value": "={{ $json[\"startDate\"] }}",
+        "dataPropertyName": "startDate",
+        "toFormat": "YYYY-MM-DD",
+        "options": {}
+      },
+      "id": "45b8fd43-b5f6-4bf8-be39-8d72c214b782",
+      "name": "Format month for summary",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        740,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "value": "={{$now}}",
+        "dataPropertyName": "endDate",
+        "toFormat": "YYYY-MM-DD",
+        "options": {}
+      },
+      "id": "433d2e7d-ecd6-4327-bfc4-010a26a0563c",
+      "name": "End month for summary",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        920,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\n// for (const item of $input.all()) {\n//   // item.json.links.self += `?start=${item.json.startDate}&end=${item.json.endDate}`\n// }\n\nconst links = [\n  {\n    link: `https://financeiro.leocarvalho.dev/api/v1/summary/basic?start=${$input.all()[0].json.startDate}&end=${$input.all()[0].json.endDate}`\n  },\n  {\n    link: `https://financeiro.leocarvalho.dev/api/v1/summary/basic?start=${$input.all()[0].json.year}-01-01&end=${$input.all()[0].json.endDate}`\n  }\n]\n\nreturn links;"
+      },
+      "id": "4a95f9e8-c5ca-4b8c-8a5c-f42c1286e08a",
+      "name": "Set links for month and year summary",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json[\"link\"] }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "1344d149-f97a-4376-951e-2692ee5effab",
+      "name": "Get year and month summary",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1360,
+        220
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "4",
+          "name": "Firefly III"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nconst currencyName = 'BRL';\n\nconst [monthReportToJson, yearReportToJson] = $input.all()\n\nconst monthReport = monthReportToJson.json;\nconst yearReport = yearReportToJson.json;\n\nconst spentThisMonth = monthReport[`spent-in-${currencyName}`]['value_parsed'];\nconst earnedThisMonth = monthReport[`earned-in-${currencyName}`]['value_parsed']; \nconst netChangeThisMonth = monthReport[`balance-in-${currencyName}`]['value_parsed'];\n\nconst spentThisYear = yearReport[`spent-in-${currencyName}`]['value_parsed'];\nconst earnedThisYear = yearReport[`earned-in-${currencyName}`]['value_parsed']; \nconst netChangeThisYear = yearReport[`balance-in-${currencyName}`]['value_parsed'];\nconst netWorth = yearReport[`net-worth-in-${currencyName}`]['value_parsed'];\n\nreturn [{\n  spentThisMonth,\n  earnedThisMonth,\n  netChangeThisMonth,\n  spentThisYear,\n  earnedThisYear,\n  netChangeThisYear,\n  netWorth\n}];"
+      },
+      "id": "23ad2e16-6274-42f3-b081-1308f4cc662e",
+      "name": "Get values from summary",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1580,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "fromEmail": "leo@leocarvalho.dev",
+        "toEmail": "carvalho.csleo@gmail.com",
+        "bccEmail": "carvalho.csleo@icloud.me",
+        "subject": "Firefly III: Monthly report",
+        "text": "=Your financial monthly report has arrived!\n\n{{ $json[\"text\"] }}",
+        "html": "={{ $json[\"text\"] }}",
+        "options": {}
+      },
+      "id": "fdd497ad-9cf3-4580-87c5-6224ff19e906",
+      "name": "Send Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [
+        2760,
+        220
+      ],
+      "credentials": {
+        "smtp": {
+          "id": "5",
+          "name": "Email Umbler"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "oneTemplate": true,
+        "template": "      {{#each items}}\n        <tr>\n          <td style=\"padding-right: 1em;\">\n            {{name}}\n          </td>\n          <td style=\"text-align: right;\">\n            R$ {{total}}\n        </tr>\n      {{/each}}",
+        "customOutputKey": true,
+        "outputKey": "categories"
+      },
+      "id": "6a178014-51f4-41c4-8a58-7f0f8e4716f5",
+      "name": "Categories table",
+      "type": "n8n-nodes-document-generator.DocumentGenerator",
+      "typeVersion": 1,
+      "position": [
+        1800,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "value": "={{ $now }}",
+        "dataPropertyName": "monthName",
+        "custom": true,
+        "toFormat": "MMMM",
+        "options": {}
+      },
+      "id": "4680fbf4-42d2-4241-a503-516438e63588",
+      "name": "Month Name",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "oneTemplate": true,
+        "template": "=<table>\n  <tr><td>Spent this month:</td><td style=\"text-align: right;\">{{ $json['spentThisMonth'] }}</td></tr>\n  <tr><td>Earned this month:</td><td style=\"text-align: right;\">{{ $json['earnedThisMonth'] }}</td></tr>\n  <tr><td style=\"border-bottom: 1px solid black\">Net change this month:</td><td style=\"text-align: right;\">{{ $json['netChangeThisMonth'] }}</td></tr>\n  <tr><td>Spent so far this year:</td><td style=\"text-align: right;\">{{ $json['spentThisYear'] }}</td></tr>\n  <tr><td>Earned so far this year:</td><td style=\"text-align: right;\">{{ $json['earnedThisYear'] }}</td></tr>\n  <tr><td style=\"border-bottom: 1px solid black\">Net change so far this year:</td><td style=\"text-align: right;\">{{ $json['netChangeThisYear'] }}</td></tr>\n  <tr><td>Current net worth:</td><td style=\"text-align: right;\">{{ $json['netWorth'] }}</td></tr>\n</table>",
+        "customOutputKey": true,
+        "outputKey": "summary"
+      },
+      "id": "629f7289-439f-43e5-8a1d-ef6bd40367d1",
+      "name": "Summary HTML",
+      "type": "n8n-nodes-document-generator.DocumentGenerator",
+      "typeVersion": 1,
+      "position": [
+        1800,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "template": "<p>Monthly report for {{monthName}} {{year}}</p>",
+        "customOutputKey": true,
+        "outputKey": "header"
+      },
+      "id": "12e4e6a2-3cec-4f22-b80d-1f6f97ebc7bf",
+      "name": "Email Header",
+      "type": "n8n-nodes-document-generator.DocumentGenerator",
+      "typeVersion": 1,
+      "position": [
+        1800,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "oneTemplate": true,
+        "template": "=<html>\n  <head>\n    <style>\n      table {\n        border-collapse: collapse;\n        border-top: 1px solid black;\n        border-bottom: 1px solid black;\n        }\n        th {\n          border-bottom: 1px solid black;\n          padding: 0.33em 1em 0.33em 1em;\n        }\n        td {\n          padding: .1em;\n        }\n        tr:nth-child(even) {\n          background: #EEE\n        }\n        tr:nth-child(odd) {\n          background: #FFF\n        }\n    </style>\n  </head>\n  <body>\n{{ $json[\"header\"] }}\n<table>\n      <tr>\n        <th>Category</th>\n        <th>Total</th>\n      </tr>\n{{ $json[\"categories\"] }}\n\n</table>\n<p>General information:</p>\n{{ $json[\"summary\"] }}\n\n</body>\n</html>"
+      },
+      "id": "818261d0-9420-4d68-a76e-5ff2ccabfebf",
+      "name": "Generate final HTML",
+      "type": "n8n-nodes-document-generator.DocumentGenerator",
+      "typeVersion": 1,
+      "position": [
+        2500,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combinationMode": "mergeByPosition",
+        "options": {}
+      },
+      "id": "a2320b1f-bdea-4661-8a8e-173ab937e984",
+      "name": "First merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        2040,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combinationMode": "multiplex",
+        "options": {}
+      },
+      "id": "2c551094-9c96-4bcf-bb18-2f3a695764c3",
+      "name": "Second merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        2260,
+        220
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {},
+      "id": "17c81120-c57e-4435-ab07-881c72acf5d2",
+      "name": "End",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3020,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "months",
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "id": "792ab7a9-8d12-4773-a233-78ad87f09ac1",
+      "name": "Start of Month",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        60,
+        0
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2023-01-24T01:35:21.000Z",
+  "versionId": "fb34a6ec-d433-4cda-af4f-e02a80127bc1"
+}
