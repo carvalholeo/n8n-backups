@@ -690,7 +690,7 @@
       "parameters": {
         "fromEmail": "leo@leocarvalho.dev",
         "toEmail": "carvalho.csleo@gmail.com",
-        "bccEmail": "carvalho.csleo@icloud.me",
+        "bccEmail": "carvalho.csleo@icloud.com",
         "subject": "Firefly III: Monthly report",
         "text": "=Your financial monthly report has arrived!\n\n{{ $json[\"text\"] }}",
         "html": "={{ $json[\"text\"] }}",
@@ -785,7 +785,7 @@
       "type": "n8n-nodes-document-generator.DocumentGenerator",
       "typeVersion": 1,
       "position": [
-        2500,
+        2600,
         220
       ]
     },
@@ -800,8 +800,8 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 2,
       "position": [
-        2040,
-        80
+        2160,
+        100
       ]
     },
     {
@@ -815,7 +815,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 2,
       "position": [
-        2260,
+        2420,
         220
       ],
       "alwaysOutputData": true
@@ -827,7 +827,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3020,
+        2940,
         220
       ]
     },
@@ -861,6 +861,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2023-01-24T03:07:54.000Z",
-  "versionId": "af0a222a-34e2-4318-93b1-2709ac485401"
+  "updatedAt": "2023-01-25T01:21:36.000Z",
+  "versionId": "10eff941-5a31-4294-a171-66378103d6fc"
 }
