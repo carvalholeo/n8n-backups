@@ -1,0 +1,63 @@
+{
+  "active": true,
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-01-26T22:48:55.485Z",
+  "id": "5",
+  "name": "Execute scheduled tasks on Firefly III",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "id": "c12e2cb2-53ae-4e97-b5bc-dc726a4fd5dd",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        600,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://financeiro.leocarvalho.dev/api/v1/cron/sFbaXsKh6Pkj3W4j8G2h46667HKnQMzu",
+        "options": {}
+      },
+      "id": "04cc3ae6-b500-4e02-9d3f-5a80d588b884",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        820,
+        380
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {},
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrencyRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2023-01-26T23:06:06.000Z",
+  "versionId": "3e6a35c5-6d67-4680-be28-4526a6b2240e"
+}
